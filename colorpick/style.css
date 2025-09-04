@@ -1,0 +1,13 @@
+.head{
+    padding-left: 40%;
+    color: red;
+}
+.btn_box{
+    margin-left: 42%;
+    margin-top: 5%;
+}
+.btn{
+    width: 6%;
+    border-radius: 10px;
+    border: 2px solid;
+}
