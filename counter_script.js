@@ -12,6 +12,7 @@ function inc(){
    else{
     cou_ele.style.color="black"
    }
+  
 }
 
 function dec(){
