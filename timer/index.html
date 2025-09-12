@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>timer</h1>
+    <p id="time">0</p>
+    <script>
+        let t=document.getElementById("time")
+        num=0
+        setInterval(function ti(){
+            t.textContent=num
+            num+=1
+    
+        },1000)
+
+    </script>
+
+</body>
+</html>
