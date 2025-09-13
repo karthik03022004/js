@@ -4,18 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin-left: 40%;
+        }
+        .box>p{
+            padding-left: 120px;
+            font-size: 3em;
+            color:darkgreen
+        }
+        img{
+            width:200px;
+            margin-left: 23%;
+        }
+        .box{
+            background-color:lightskyblue;
+            width: 400px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>timer</h1>
+    <div class="box">
+            <h1 style="padding-left: 29px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOPWATCH </h1>
+            <img src="https://imgs.search.brave.com/F0lXrAp8MXwGEHmi0S5N-8lbuV9B0Qmn0Or-VF8d2aI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/NTYwNjQ5My92ZWN0/b3IvYS1oYW5kLWhv/bGRpbmctYS1zdG9w/d2F0Y2guanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPW9Dc2Q2/TVBxLXpRc1c3akpz/WGxnTklGTS1FVzFo/a3NKamd2YnZKeXdx/bnc9" alt="" id="over">
     <p id="time">0</p>
+    </div>
+
     <script>
-        let t=document.getElementById("time")
-        num=0
-        setInterval(function ti(){
-            t.textContent=num
-            num+=1
-    
-        },1000)
+       let count=document.getElementById("time")
+       let o=document.getElementById("over")
+       num=15
+       let dead=setInterval(function doit(){
+        count.textContent=num
+        
+        num-=1
+        if(num<10){
+            count.style.color="red"
+        }
+        if(num<0){
+            o.src="https://imgs.search.brave.com/y3q0tfT3GIk_lap0sb1o7x8KfPv9SQBA-Zsbkii1rrg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM2/NjI3NTgwMC92ZWN0/b3Ivc3RvcHdhdGNo/LXRpbWVyLXNwZWVk/LWJlaW5nLWhlbGQt/YnktYS1wZXJzb25z/LWhhbmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPWx4akdr/dTFTZG9YalFGNnlJ/NVFhQzRVM0xXOGNB/bG9HTUE0Z0Y5blVq/ZE09"
+            count.textContent="time up!"
+
+        }
+        
+        
+       },1000)
+
 
     </script>
 
