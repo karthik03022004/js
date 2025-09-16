@@ -1,5 +1,6 @@
 a=[]
 let main_div=document.getElementById("item_con")
+
 function clear_all(){
    console.log("clear")
    main_div.textContent=""
