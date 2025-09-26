@@ -1,32 +1,33 @@
+
 let pro_ele=document.getElementById("products")
 api=fetch("https://fakestoreapi.com/products").then(function(response){
     return response.json()
+}).then(function(jsondata){
+    for(i=0;i<jsondata.length;i++){
+        if(!jsondata.length){
+            jsondata=[jsondata]
+        }
+        console.log(jsondata[i])
+        let card=document.createElement("div")
+        card.classList="card"
+        let img_ele=document.createElement("img")
+        img_ele.src=jsondata[i].image
+        img_ele.style.width="100px"
+       let pro_name_ele= document.createElement("h4")
+       let button_ele=document.createElement("button")
+       button_ele.textContent="delete"
+       arr=[jsondata]
+        button_ele.onclick=function(){
+        console.log(jsondata[i].id)
+       }
+       pro_name_ele.textContent=jsondata[i].title
+       card.appendChild(img_ele)
+       card.appendChild(pro_name_ele)
+       card.appendChild(button_ele)
+       pro_ele.appendChild(card)
+      
 
-}).then(function(jsonresponse){
-    console.log(jsonresponse)
-   for(let i=0;i<jsonresponse.length;i++){
-    
-    let card=document.createElement("div")
-    card.classList="card"
-    
-    let img_ele=document.createElement("img")
-    img_ele.src=jsonresponse[i].image
-    img_ele.style.width="100px"
-    card.appendChild(img_ele)
-    let title_ele=document.createElement("h4")
-    title_ele.textContent=jsonresponse[i].title 
-    card.appendChild(title_ele)
-    
-    let price_ele=document.createElement("h5")
-    price_ele.textContent="price:$"+jsonresponse[i].price
-    card.appendChild(price_ele)
-    let b_ele=document.createElement("button")
-    b_ele.textContent="delete"
-    card.appendChild(b_ele)
-
-    pro_ele.appendChild(card)
 
 
-   }
+    }
 })
-

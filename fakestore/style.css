@@ -4,6 +4,13 @@
     margin-left: 60px;
 }
 .card{
+    width: 300px;
+    padding: 10px;
+    border: 1px dotted black;
+    border-radius: 10px;
+    margin: 2px;
+}
+/* .card{
     width:300px;
     padding:10px;
     border: 1px solid black;
@@ -17,4 +24,4 @@
 }
 .card>button{
     margin-bottom: 0px;
-}
+} */
