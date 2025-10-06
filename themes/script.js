@@ -1,3 +1,6 @@
+
 function change(){
-    document.classlist.toggle("mode")
+    document.body.classList.toggle("dark_mode")
+
+    
 }
