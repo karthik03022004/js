@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karthik's Shopping</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: 
+        linear-gradient(135deg, rgba(116, 235, 213, 0.8), rgba(172, 182, 229, 0.8)),
+        url("https://images.unsplash.com/photo-1607083206869-4c546430cfb8?auto=format&fit=crop&w=1920&q=80") 
+        no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      padding: 50px 70px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #f8f8f8;
+      margin-bottom: 35px;
+      font-weight: 400;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #43cea2, #185a9d);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .decor {
+      position: absolute;
+      width: 80px;
+      animation: float 4s ease-in-out infinite;
+      opacity: 0.9;
+    }
+
+    .decor1 {
+      top: -30px;
+      left: -30px;
+      animation-delay: 0.5s;
+    }
+
+    .decor2 {
+      bottom: -30px;
+      right: -30px;
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .decor {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" class="decor decor1" alt="Shopping Bag" />
+    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="decor decor2" alt="Shopping Cart" />
+
+    <h1>Karthik's Shopping</h1>
+    <h2>Welcome to our Online Store</h2>
+    <button onclick="go_reg_user()" id="reg_user_id">Register</button>
+    <button onclick="go_login_user()" id="login_user_id">Login</button>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

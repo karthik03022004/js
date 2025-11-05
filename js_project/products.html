@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- defer -->
+     <script src="./main.js"></script>
+    <style>
+        #pro_div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card{
+            width: 300px;
+    padding: 10px;
+    border: 1px dotted black;
+    border-radius: 10px;
+    margin: 2px;
+        }
+        #table{
+            margin-left: 30%;
+        }
+        #downloadPDF{
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            width: 100px;
+            margin-left: 30%;
+
+        }
+    </style>
+</head>
+<body onload="show_products()" id="products">
+    <h1>Welcome to products Shopping</h1>
+    <div id="pro_div">
+
+    </div>
+    <div>
+        <table id="table" border="1" cellpadding="9" cellspacing="0">
+            <thead>
+                <tr>
+                <th id="item">items</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>total</th>
+        
+            </tr>
+            
+            </thead>
+            
+            <tbody id="cartbody">
+                
+            </tbody>
+            
+
+        </table>
+        <button id="downloadPDF">Generate Invoice</button>
+
+    </div>
+    <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+document.getElementById("downloadPDF").addEventListener("click", () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const table = document.getElementById("cartbody");
+
+  if (!table || table.rows.length === 0) {
+    alert("No products in the cart to print!");
+    return;
+  }
+
+  // Add title
+  doc.setFontSize(16);
+  doc.text("Shopping Cart Summary", 14, 15);
+
+  let y = 25;
+
+  // Table headers
+  doc.setFontSize(12);
+  doc.text("Product", 14, y);
+  doc.text("Price", 80, y);
+  doc.text("Qty", 120, y);
+  doc.text("Total", 150, y);
+  y += 8;
+
+  // Loop through rows
+  Array.from(table.rows).forEach(row => {
+    const cells = row.cells;
+    if (cells.length >= 4) {
+      doc.text(cells[0].innerText, 14, y);
+      doc.text(cells[1].innerText, 80, y);
+      doc.text(cells[2].innerText, 120, y);
+      doc.text(cells[3].innerText, 150, y);
+      y += 8;
+    }
+  });
+
+  // Add grand total if exists
+  const totalEl = document.querySelector(".grand_tot");
+  if (totalEl) {
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(totalEl.innerText, 14, y);
+  }
+
+  // Save as PDF
+  doc.save("Cart_Summary.pdf");
+});
+</script>
+
+
+
+    
+</body>
+</html>

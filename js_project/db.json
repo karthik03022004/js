@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "siva",
+      "password": "12345678",
+      "mail": "siva@gmail.com",
+      "mobile": "9786123456"
+    },
+    {
+      "id": "2",
+      "username": "karthik",
+      "password": "12345612",
+      "mail": "karthik@gmail.com",
+      "mobile": "9786123450"
+    },
+    {
+      "id": "f793",
+      "username": "charan",
+      "password": "1234",
+      "mail": "charan@gmail.com",
+      "mobile": "6304000378"
+    },
+    {
+      "id": "7a08",
+      "username": "yashwanth",
+      "password": "7890",
+      "mail": "yash@gmail.com",
+      "mobile": "6304000378"
+    },
+    {
+      "id": "5fd6",
+      "username": "siva charan",
+      "password": "12345",
+      "mail": "sivacharankarthik_k@srmap.edu.in",
+      "mobile": "6304000378"
+    }
+  ]
+}
