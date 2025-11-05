@@ -1,3 +1,44 @@
+
+function go_reg_user(){
+    console.log("reg button clicked")
+    window.location.href="./register.html"
+}
+function go_login_user(){
+    console.log("login button clicked")
+    window.location.href="./login.html"
+}
+//  -tpes of fun named ,arrow, anonmyusfun iife
+const user_login=async function (){   //anonymus fun
+    // console.log("login clicked!")
+    username_ele=document.getElementById("login_name").value
+    userpass_ele=document.getElementById("login_pass").value
+    console.log(username_ele,userpass_ele)
+    // make a api call to fetch data from server to match the data
+    let all_users=null
+    // fetch will take time to fetch data from server through api to  js wiil keep hold and executes next line so,overcome it we use async await
+    // await is used to to tell to wait till alluser data comes from server 
+    all_user_data= await fetch("http://localhost:3000/users/").then(data=>data.json()).then(data=>all_users=data).catch(err=>console.error(err))
+    all_users=await all_users
+    console.log(all_users)
+    user_exist=false
+    all_users.forEach( ele=>{
+        if(ele.username==username_ele && ele.password==userpass_ele){
+            user_exist=true
+            console.log("yes")
+            alert("user found")
+            window.sessionStorage.setItem("user_logged_in","true")
+            window.location.href="./products.html"
+        }
+});
+if(user_exist==false){
+    alert("invalid login")
+}
+}
+
+// cors->cross origin resource sharing :blocks user to restricts tthe use of http fakestore
+
+
+
 let countMap = {}; // To store quantity for each product
 
 const show_products = async () => {
