@@ -1,11 +1,11 @@
 
 function go_reg_user(){
     console.log("reg button clicked")
-    window.location.href="./register.html"
+    window.location.href=".js_project/register.html"
 }
 function go_login_user(){
     console.log("login button clicked")
-    window.location.href="./login.html"
+    window.location.href=".js_project/login.html"
 }
 //  -tpes of fun named ,arrow, anonmyusfun iife
 const user_login=async function (){   //anonymus fun
